@@ -1,2 +1,2 @@
 # checkerboardPattern
-Checkerboard Pattern
+7x7 black and white checkerboard pattern
