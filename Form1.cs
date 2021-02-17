@@ -19,25 +19,25 @@ namespace RecapDemo1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //64 tane buton yapmamız lazım 8x8 dama tahtası yapmak için arraydan yararlanıcaz
-
-            Button[,] buttons = new Button[8,8];  //buton nesnesini oluşturduk
+            //64 button is required for 8x8 checkerboard pattern ,so we use arrays
+          
+            Button[,] buttons = new Button[8,8];  //button object is created
             int top = 0;
             int left = 0;
-            for (int i = 0; i <= buttons.GetUpperBound(0) ; i++)// sıfırıncı boyutun en büyük alabileceği değer 7
+            for (int i = 0; i <= buttons.GetUpperBound(0) ; i++)// from 0 to 7
             {
                 for (int j = 0; j <= buttons.GetUpperBound(1); j++)
                 {
                     buttons[i, j] = new Button();
                     buttons[i, j].Width = 50;
                     buttons[i, j].Height = 50;
-                    //butonları sağa koyması için
+                    //buttons is put through right
                     buttons[i, j].Left = left;
-                    //aşağı kayması için
+                    //for buttons go down
                     buttons[i, j].Top = top;
                     left += 50;
-                    //butonların biri siyah biri beyaz olsun istiyoruz
-                    if ((i+j)%2==0)  //i+jnin mod 2si sıfırsa yani ikiye tam bölünüyorsa
+                    //one of the button's colour is black and the other one is white
+                    if ((i+j)%2==0)  //if the mod operation of i+j for 2 is equal to zero 
                     {
                         buttons[i, j].BackColor = Color.Black;
                     }
@@ -46,12 +46,12 @@ namespace RecapDemo1
                         buttons[i, j].BackColor = Color.White;
                     }
                     
-                    this.Controls.Add(buttons[i,j]); //buton ekleme
+                    this.Controls.Add(buttons[i,j]); //adds button
                 }
-                //ikinci satıra geçmesi için lefti sıfırlamam lazım yoksa sonsuza kadar sağa gider
+                //for the buttons go to second row, left should be resetted otherwise the buttons go to the left forever
                 top += 50;
-                left = 0; //8 tane buton yanyana oldu 
-            }
+                left = 0; //8 buttons put next to each other
+            } 
 
            
 
